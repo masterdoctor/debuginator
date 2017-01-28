@@ -8,6 +8,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.clout_team.masterdoctor.debuginator.MainWindow">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <TextView
+        android:text="Output:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="60dp"
+        android:id="@+id/textView" />
+
+    <com.clout_team.masterdoctor.debuginator.Typewriter
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/outputBox"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="monospace"
+        android:text="> Waiting for command_"/>
+
+    <TextView
+        android:text="Actions:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView2" />
+
+    <Button
+        android:text="Get Available Processors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getAvailProcess"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="getAvailProcesses"/>
 </RelativeLayout>
