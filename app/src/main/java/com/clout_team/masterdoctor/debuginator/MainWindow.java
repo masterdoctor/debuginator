@@ -22,9 +22,17 @@ public class MainWindow extends Activity {
     public void getAvailProcesses(View view){
         int processors = Runtime.getRuntime().availableProcessors();
         Typewriter outputBox = (Typewriter) findViewById(R.id.outputBox);
-        //outputBox.setText(processors);
-        outputBox.setCharacterDelay(25);
+        outputBox.setCharacterDelay(5);
         outputBox.animateText("> " + "Detected " + processors + " available processors" + "_");
+    }
+
+    public void viewMemory(View view){
+        long freeMemory = Runtime.getRuntime().freeMemory();
+        long maxMemory = Runtime.getRuntime().maxMemory();
+
+        Typewriter outputBox = (Typewriter) findViewById(R.id.outputBox);
+        outputBox.setCharacterDelay(25);
+        outputBox.animateText("> " + "Memory: " + Math.round(freeMemory / Math.pow(10, 5)) + "/" + Math.round(maxMemory / Math.pow(10, 5)) + "MB_");
     }
 
 }
